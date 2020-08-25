@@ -1,5 +1,5 @@
-Created styled components and have tweaked a bit with fonts and themes. 
-Now working on Epics as the next commit for the next. 
+Created styled components and have tweaked a bit with fonts and themes. Click the button :) 
+Now working on Epics for the next commit to go. 
 
 This test is designed for us to understand your comfort level in using React JS, RXJS and Redux. Please follow the instructions below to complete the test.
 
