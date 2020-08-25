@@ -1,33 +1,27 @@
-import React, { Component } from 'react'
-// import styled from 'styled-components'
+import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import GlobalFonts from './fonts/fonts'
+import { GlobalStyles } from './components/globalStyles'
+import { useDarkMode } from './components/useDarkMode'
+import { lightTheme, darkTheme } from './components/themes'
+import Toggle from './components/toggler'
+import Title from './components/title'
 
-import Wrapper from './styledComponents/wrapper'
-import Title from './styledComponents/Title'
+const App = () => {
+  const [theme, themeToggler] = useDarkMode()
+  const themeMode = theme === 'light' ? lightTheme : darkTheme
 
-const theme = {
-  fonts: {
-    primaryFont: 'Ringbearer',
-    secondaryFont: 'Aniron',
-  } 
-}
-
-
-class App extends Component {
-  render () {
-    return (
-      <div>
-        <ThemeProvider theme={theme}>
-          <Wrapper>
-            <GlobalFonts />
-              <Title>Your journey starts here</Title>
-            <p>Lorem ipsum...</p>
-          </Wrapper>
-        </ThemeProvider>
-      </div>
-    )
-  }
+  return (
+    <ThemeProvider theme={themeMode}>
+      <>
+        <GlobalStyles />
+        <Toggle theme={theme} toggleTheme={themeToggler} />
+        <GlobalFonts />
+        <Title>Your journey to Middle-earth starts here</Title>
+        <p>Coming soon...</p>
+      </>
+    </ThemeProvider>
+  )
 }
 
 export default App
